@@ -1,9 +1,8 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import llm,history
+from model import llm
 
-chat = llm.start_chat(history=history)
 st.set_page_config(page_title="Psychologist", layout="centered")
 
 if 'chat_history' not in st.session_state:
@@ -44,7 +43,7 @@ def send_message():
     user_message = st.session_state.user_input  # Access user input from session state
     if user_message:
         add_message("You", user_message)
-        res = chat.send_message(user_message).text
+        res = chat.send_message(user_message,).text
         add_message("Aura", res)
         st.session_state.user_input = ""  # Clear input field after submission
 
