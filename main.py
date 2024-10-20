@@ -2,6 +2,7 @@ import streamlit as st
 import sys
 sys.path.append('./')
 from model import chat,initial_response
+import subprocess
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
@@ -11,8 +12,7 @@ if 'chat_history' not in st.session_state:
 
 
 if len(st.session_state['chat_history']) == 0:
-    # chat = llm.start_chat(history=[])
-    # initial_response = chat.send_message(psy_prompt).text
+    subprocess.run(['python','model.py'])
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 
