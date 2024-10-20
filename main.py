@@ -1,7 +1,7 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import llm
+from model import chat
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
