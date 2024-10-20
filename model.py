@@ -22,9 +22,8 @@ safety_settings = [
     "threshold": "BLOCK_NONE"
   }
 ]
-print(st.secrets['GOOGLE_API_KEY'])
 genai.configure(api_key='AIzaSyA7eoFGIqKaCA7oUYMqzT83NexlDnRjYfs')
-llm = genai.GenerativeModel(model_name='gemini-1.5-pro-002',safety_settings=safety_settings)
+llm = genai.GenerativeModel(model_name='gemini-1.5-pro',safety_settings=safety_settings)
 history = []
 chat = llm.start_chat(history=history)
 psy_prompt = """You name is Aura, you are a psychologist, an expert in 
@@ -38,4 +37,4 @@ Give analysis in tabular format with the probability of things happening if requ
 Talk like a HUMAN PSYCHOLOGIST.
 Give a good initial response 
 """
-# initial_response = chat.send_message(psy_prompt).text
+print(chat.send_message(psy_prompt).text)
