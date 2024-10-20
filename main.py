@@ -19,6 +19,7 @@ people's behaviour.
 Give ANALYSIS in TABULAR FORMAT with the PROBABLITY of things happening if required.
 Talk like a HUMAN PSYCHOLOGIST.
 Give a good initial response 
+Use Underlines and bold when answering 
 """
 
 if len(st.session_state['chat_history']) == 0:
