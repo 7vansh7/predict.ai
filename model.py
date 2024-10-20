@@ -22,7 +22,7 @@ safety_settings = [
     "threshold": "BLOCK_NONE"
   }
 ]
-
+print(st.secrets['GOOGLE_API_KEY'])
 genai.configure(api_key='AIzaSyA7eoFGIqKaCA7oUYMqzT83NexlDnRjYfs')
 llm = genai.GenerativeModel(model_name='gemini-1.5-pro-002',safety_settings=safety_settings)
 history = []

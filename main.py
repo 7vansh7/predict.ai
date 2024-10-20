@@ -42,8 +42,8 @@ def send_message():
     user_message = st.session_state.user_input  # Access user input from session state
     if user_message:
         add_message("You", user_message)
-        res = chat.send_message(user_message)
-        add_message("Aura", res.text)
+        res = chat.send_message(user_message).text
+        add_message("Aura", res)
         st.session_state.user_input = ""  # Clear input field after submission
 
 # Text input for the user's message with key assigned
