@@ -8,7 +8,7 @@ st.set_page_config(page_title="Psychologist", layout="centered")
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
-# Define the initial prompt
+
 psy_prompt = """You name is Aura, you are a psychologist, an expert in 
 predicting human behaviour.
 You are adept in psychology, philosophy, and literature.
@@ -21,15 +21,15 @@ Talk like a HUMAN PSYCHOLOGIST.
 Give a good initial response 
 """
 
-# Send the initial prompt only if chat history is empty
-# if len(st.session_state['chat_history']) == 0:
-    # initial_response = chat.send_message(psy_prompt)
-    # st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
+if len(st.session_state['chat_history']) == 0:
+    initial_response = chat.send_message(psy_prompt)
+    st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 with st.sidebar:
     st.title("AI Psychologist")
     st.markdown("Get quick answers to your psychological needs and predict other people's behaviour. Not for medical use.")
     st.markdown('[Want an AI Model for you business, Click here ](https://www.linkedin.com/company/discourseaihome/?viewAsMember=true)')
+    st.text_area(label='Write any notes here')
 
 st.title("Welcome to the Chat!")
 
