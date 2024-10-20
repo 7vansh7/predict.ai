@@ -22,7 +22,7 @@ Give a good initial response
 """
 
 if len(st.session_state['chat_history']) == 0:
-    initial_response = chat.send_message(psy_prompt)
+    initial_response = chat.send_message(psy_prompt).text
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 with st.sidebar:
