@@ -1,16 +1,17 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import llm, history,chat
+from model import llm
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
-if 'chat' not in st.session_state:
+if 'session_initialized' not in st.session_state:
     history = []
-    st.session_state['chat'] = llm.start_chat(history=history) 
+    chat = llm.start_chat(history=history)
+    st.session_state['session_initialized'] = True 
 
 psy_prompt = """You name is Aura, you are a psychologist, An EXPERET in 
 PREDICTING HUMAN BEHAVIOUR by making lots of Assumptions.
