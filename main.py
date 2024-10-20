@@ -1,7 +1,7 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import llm
+from model import llm,history
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
@@ -23,7 +23,6 @@ Use Underlines and bold when answering
 """
 
 if len(st.session_state['chat_history']) == 0:
-    history = []
     chat = llm.start_chat(history=history)
     initial_response = chat.send_message(psy_prompt).text
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
@@ -45,6 +44,7 @@ def send_message():
     user_message = st.session_state.user_input  # Access user input from session state
     if user_message:
         add_message("You", user_message)
+        chat = llm.start_chat(history=history)
         res = chat.send_message(user_message).text
         add_message("Aura", res)
         st.session_state.user_input = ""  # Clear input field after submission
