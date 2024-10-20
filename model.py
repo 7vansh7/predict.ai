@@ -22,7 +22,7 @@ safety_settings = [
   }
 ]
 
-genai.configure(api_key='AIzaSyA7eoFGIqKaCA7oUYMqzT83NexlDnRjYfs')
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 llm = genai.GenerativeModel(model_name='gemini-1.5-pro-002',safety_settings=safety_settings)
 history = []
 chat = llm.start_chat(history=history)
