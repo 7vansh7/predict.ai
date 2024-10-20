@@ -10,9 +10,8 @@ if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
 
-
 if len(st.session_state['chat_history']) == 0:
-    subprocess.run(['python','model.py'])
+    st.rerun()
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 
