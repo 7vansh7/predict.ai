@@ -5,13 +5,8 @@ from model import llm
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
-if 'chat_history' not in st.session_state:
-    st.session_state['chat_history'] = []
-
-if 'session_initialized' not in st.session_state:
-    history = []
-    chat = llm.start_chat(history=history)
-    st.session_state['session_initialized'] = True 
+# if 'chat_history' not in st.session_state:
+#     st.session_state['chat_history'] = []
 
 psy_prompt = """You name is Aura, you are a psychologist, An EXPERET in 
 PREDICTING HUMAN BEHAVIOUR by making lots of Assumptions.
@@ -27,6 +22,7 @@ Use Underlines and bold when answering
 """
 
 if len(st.session_state['chat_history']) == 0:
+    chat = llm.start_chat(history=[])
     initial_response = chat.send_message(psy_prompt).text
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
