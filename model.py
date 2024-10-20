@@ -38,4 +38,4 @@ Give analysis in tabular format with the probability of things happening if requ
 Talk like a HUMAN PSYCHOLOGIST.
 Give a good initial response 
 """
-initial_response = chat.send_message(psy_prompt).text
+# initial_response = chat.send_message(psy_prompt).text

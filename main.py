@@ -1,7 +1,7 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import chat, initial_response
+from model import chat
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
@@ -22,9 +22,9 @@ Give a good initial response
 """
 
 # Send the initial prompt only if chat history is empty
-if len(st.session_state['chat_history']) == 0:
+# if len(st.session_state['chat_history']) == 0:
     # initial_response = chat.send_message(psy_prompt)
-    st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
+    # st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 with st.sidebar:
     st.title("AI Psychologist")
