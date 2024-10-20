@@ -5,10 +5,10 @@ from model import chat,initial_response
 import subprocess
 
 st.set_page_config(page_title="Psychologist", layout="centered")
+subprocess.run(['python','model.py'])
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
-    subprocess.run(['python','mai'])
 
 
 if len(st.session_state['chat_history']) == 0:
