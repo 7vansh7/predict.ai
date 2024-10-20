@@ -1,29 +1,18 @@
 import streamlit as st
 import sys
 sys.path.append('./')
-from model import llm
+from model import llm,initial_response
 
 st.set_page_config(page_title="Psychologist", layout="centered")
 
-# if 'chat_history' not in st.session_state:
-#     st.session_state['chat_history'] = []
+if 'chat_history' not in st.session_state:
+    st.session_state['chat_history'] = []
 
-psy_prompt = """You name is Aura, you are a psychologist, An EXPERET in 
-PREDICTING HUMAN BEHAVIOUR by making lots of Assumptions.
-You are adept in psychology, philosophy, and literature.
-Ask questions from the user to better your analysis and answer.
-Give examples from contemporary studies if required.
-You give people psychological help and also help them predicting other 
-people's behaviour.
-Give ANALYSIS in TABULAR FORMAT with the PROBABLITY of things happening if required.
-Talk like a HUMAN PSYCHOLOGIST.
-Give a good initial response 
-Use Underlines and bold when answering 
-"""
+
 
 if len(st.session_state['chat_history']) == 0:
-    chat = llm.start_chat(history=[])
-    initial_response = chat.send_message(psy_prompt).text
+    # chat = llm.start_chat(history=[])
+    # initial_response = chat.send_message(psy_prompt).text
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 
