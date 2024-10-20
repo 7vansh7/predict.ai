@@ -9,7 +9,8 @@ if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
 
 if 'chat' not in st.session_state:
-    st.session_state['chat'] = llm.start_chat(history=st.session_state['history']) 
+    history = []
+    st.session_state['chat'] = llm.start_chat(history=history) 
 
 psy_prompt = """You name is Aura, you are a psychologist, An EXPERET in 
 PREDICTING HUMAN BEHAVIOUR by making lots of Assumptions.
