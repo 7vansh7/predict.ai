@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import streamlit as st
 import sys 
 sys.path.append('./')
-from main import history
 
 load_dotenv()
 safety_settings = [
@@ -27,7 +26,7 @@ safety_settings = [
 ]
 genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
 llm = genai.GenerativeModel(model_name='gemini-1.5-flash-002',safety_settings=safety_settings)
-chat = llm.start_chat(history=history)
+chat = llm.start_chat(history=[])
 psy_prompt = """You name is Aura, you are a psychologist, An EXPERT in 
 PREDICTING HUMAN BEHAVIOUR by making lots of Assumptions.
 You are adept in psychology, philosophy, and literature.
