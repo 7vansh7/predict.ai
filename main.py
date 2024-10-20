@@ -29,7 +29,7 @@ with st.sidebar:
     st.title("AI Psychologist")
     st.markdown("Get quick answers to your psychological needs and predict other people's behaviour. Not for medical use.")
     st.markdown('[Want an AI Model for you business, Click here ](https://www.linkedin.com/company/discourseaihome/?viewAsMember=true)')
-    st.text_area(label='Write any notes here')
+    st.text_area(label='Write any thoughts here')
 
 st.title("Welcome to the Chat!")
 
