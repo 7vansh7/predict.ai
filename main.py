@@ -8,10 +8,11 @@ st.set_page_config(page_title="Psychologist", layout="centered")
 
 if 'chat_history' not in st.session_state:
     st.session_state['chat_history'] = []
+    st.rerun()
 
 
 if len(st.session_state['chat_history']) == 0:
-    st.rerun()
+    
     st.session_state['chat_history'].append({"user": "Aura", "message": initial_response})
 
 
