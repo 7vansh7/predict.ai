@@ -29,7 +29,7 @@ if len(st.session_state['chat_history']) == 0:
 with st.sidebar:
     st.title("AI Psychologist")
     st.markdown("Get quick answers to your psychological needs and predict other people's behaviour. Not for medical use.")
-    st.markdown('[Want an AI Model for you business, click me ](https://www.linkedin.com/company/discourseaihome/?viewAsMember=true)')
+    st.markdown('[Want an AI Model for you business, Click here ](https://www.linkedin.com/company/discourseaihome/?viewAsMember=true)')
 
 st.title("Welcome to the Chat!")
 
